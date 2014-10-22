@@ -1,2 +1,31 @@
 ---
-# tasks file for users
+# tasks file for Users
+- include_vars: groups_present.yml
+
+- include_vars: groups_absent.yml
+
+- include_vars: users_present.yml
+
+- include_vars: users_absent.yml
+
+- name: Create-Groups | Make sure these groups are present
+  group: name="{{item.name}}" system="{{item.system|default('no')}}"
+           {% if item.gid is defined %} gid="{{item.gid}}"{% endif %} state=present
+  with_items: create_groups
+
+- name: Delete-Groups | Make sure these groups are absent
+  group: name="{{item.name}}" state=absent
+  with_items: delete_groups
+
+- name: Create-Users | Make sure these users are present
+  user: name="{{item.name}}" {% if item.pass is defined %} password="{{item.pass}}"{% endif %}
+          comment="{{item.gecos|default('')}}" system="{{item.system|default('no')}}" 
+          {% if item.group is defined %} group="{{item.group}}"{% endif %} 
+          {% if item.groups is defined %} groups="{{','.join(item.groups)}}"{% endif %} 
+          {% if item.home is defined %} home="{{item.home}}"{% endif %} append="{{item.append|default('yes')}}" 
+          createhome="{{item.home_create|default('yes')}}" state=present
+  with_items: create_users
+
+- name: Delete-Users | Make sure these users are absent
+  user: name="{{item.name}}" state=absent force="{{item.force|default('yes')}}"
+  with_items: delete_users
