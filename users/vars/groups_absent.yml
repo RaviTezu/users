@@ -1,0 +1,5 @@
+---
+# vars file for Users
+delete_groups:
+  - name:  "group2"           #Required   
+    state: "absent"           #optional always: absent 

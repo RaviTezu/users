@@ -1,0 +1,14 @@
+---
+# vars file for Users
+create_users:
+  - name:  "user1"                   #Required                                
+    gecos: "Full_name_user1"         #optional def: above mentioned name is used
+    pass:  "$6$VoMGgByEnmdq$iKWtGVHUjaKw7mCYpoC/xV4aX5qlkFSzAOS.skvYOLJ3Ngl1hTb3pERYxB1GD8dcWKuMpEIY6tTZm4CR64DxP0" #optional def: no password
+    system: yes                      #optional def: no help: If "yes" uid betweeen 100-499 will be used.
+    group: "admin"                   #optional def: creates a new group with name
+    groups: ["dba","testing"]        #optional def: null
+    shell: "/usr/sbin/nologin"       #optional def: /bin/bash
+    home: "/var/lib/user1"           #optional def: /home/<Above_mentioned_name>
+    home_create: no                  #optional def: yes help: If "no" home dir will not be created.
+    state: "present"                 #optional always: present
+    append: yes                      #optional def: yes - If "no" user will be removed all other groups except the groups mentioned in groups
