@@ -1,0 +1,7 @@
+---
+# vars file for users
+create_groups:
+  - name:  "group1"         #Required
+    state: "present"        #optional always: present 
+    system: yes             #optional def: no help: If "yes" and gid not defined -> uses a gid between 100-499
+    gid: 5000               #optional def: random-num 
