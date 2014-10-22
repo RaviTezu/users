@@ -44,7 +44,6 @@ galaxy_info:
     - wheezy
   
   #categories:
-  - cloud
   - cloud:ec2
   - system
 dependencies: []
