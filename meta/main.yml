@@ -43,7 +43,7 @@ galaxy_info:
     - squeeze
     - wheezy
   
-categories:
+  categories:
   - cloud:ec2
   - system
-dependencies: []
+  dependencies: []
