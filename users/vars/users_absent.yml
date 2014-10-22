@@ -1,0 +1,6 @@
+---
+# vars file for Users
+delete_users:
+  - name:  "user2"         #Required
+    state: "absent"        #optional always:absent
+    force: no             #optional def: yes help: If "yes" ~ userdel -r <username>

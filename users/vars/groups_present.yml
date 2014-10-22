@@ -1,5 +1,5 @@
 ---
-# vars file for users
+# vars file for Users
 create_groups:
   - name:  "group1"         #Required
     state: "present"        #optional always: present 
