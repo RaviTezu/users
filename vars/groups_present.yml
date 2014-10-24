@@ -1,5 +1,6 @@
 ---
 # vars file for Users
+# If this is not working for you: Please see Warning section in README.md file. 
 create_groups:
   - name:  "group1"         #Required
     state: "present"        #optional always: present 

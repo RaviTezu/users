@@ -2,6 +2,7 @@ Users:
 =========
 
 This role manages user accounts and groups on a server.
+*Please see Warnings section below*
 
 Role Variables
 --------------
@@ -29,3 +30,17 @@ Author Information
 ------------------
 Role created by RaviTezu 
 Date: Oct 22 2014
+
+**Warning**:
+============
+If you are getting this error " one or more undefined variables: 'unicode object' has no attribute 'name' " please use the below format for vars/*.yml files:
+
+groups_present.yml:
+===================
+---
+vars file for users
+- 
+  name: "group1" 
+  state: present
+  gid: 5000
+

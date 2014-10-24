@@ -1,5 +1,6 @@
 ---
 # vars file for Users
+#If this is not working for you: Please see Warning section in README.md file.
 create_users:
   - name:  "user1"                   #Required                                
     gecos: "Full_name_user1"         #optional def: above mentioned name is used
