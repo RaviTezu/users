@@ -18,7 +18,7 @@ Role Variables
 
 Example Playbook
 ----------------
-    - hosts: servers
+    - hosts: servers_group
       roles:
          - users
 
@@ -33,15 +33,27 @@ Date: Oct 22 2014
 
 Warnings:
 ============
-If you are getting this error " one or more undefined variables: 'unicode object' has no attribute 'name' " please use the below format for vars/*.yml files:
+1. If you are getting this error " one or more undefined variables: 'unicode object' has no attribute 'name' " please use the below format for vars/*.yml files:
 
 groups_present.yml:
 ------------------
 ```
 ---
-vars file for users
 - 
   name: "group1" 
   state: present
   gid: 5000
+```
+
+2. I have found that append is not working as expected. "append" option have "no" value by default, and it has to remove the user from all other groups apart from the groups mentioned in the user_present.yml file. In order to get it work, you have to define "groups: []" in the users_present.yml file explicitly. 
+```
+---
+create_users:
+-   
+  name:  "rteja"
+  gecos: "RaviTeja"
+  groups: []
+  pass:  "$6$xmlbExSxzxKxOxPxzxjxQxnZiUBW8TC8rxbxCxuxtxYxExNxExHxSxxxlrxx8xfxnxTxExrxYxAx.xIxn5xrxPx4xbx1"
+  ssh_key: "rteja.pub"
+
 ```
