@@ -33,7 +33,7 @@ Date: Oct 22 2014
 
 Warnings:
 ============
-1. If you are getting this error " one or more undefined variables: 'unicode object' has no attribute 'name' " please use the below format for vars/*.yml files:
+- If you are getting this error " one or more undefined variables: 'unicode object' has no attribute 'name' " please use the below format for vars/*.yml files:
 
 groups_present.yml:
 ------------------
@@ -45,7 +45,7 @@ groups_present.yml:
   gid: 5000
 ```
 
-2. I have found that append is not working as expected. "append" option have "no" value by default, and it has to remove the user from all other groups apart from the groups mentioned in the user_present.yml file. In order to get it work, you have to define "groups: []" in the users_present.yml file explicitly. 
+- I have found that append is not working as expected. "append" option have "no" value by default, and it has to remove the user from all other groups apart from the groups mentioned in the user_present.yml file. In order to get it work, you have to define "groups: []" in the users_present.yml file explicitly. 
 ```
 ---
 create_users:
@@ -57,3 +57,5 @@ create_users:
   ssh_key: "rteja.pub"
 
 ```
+
+Note: Feel free to mail me at ravi-teja@live.com or open a issue here for any help/issues. Have Fun! 
