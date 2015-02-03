@@ -28,7 +28,7 @@ MIT
 
 Author Information
 ------------------
-Role created by RaviTezu 
+Role created by RaviTezu - http://ravitezu.me
 Date: Oct 22 2014
 
 Warnings:
